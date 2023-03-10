@@ -1,3 +1,9 @@
 # zsh
 
-[Zsh](https://github.com/tmux/tmux/wiki) config.
+[Zsh](https://ohmyz.sh) config.
+
+## Installation
+
+```bash
+./install.sh
+```
