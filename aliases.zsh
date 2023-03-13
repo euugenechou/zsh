@@ -32,3 +32,11 @@ alias skhdconf="vi ~/.skhdrc"
 alias wmstart="brew services start yabai; brew services start skhd;"
 alias wmrestart="brew services restart yabai; brew services restart skhd;"
 alias wmstop="brew services stop yabai; brew services stop skhd;"
+
+# blasphemy?
+if command -v exa > /dev/null; then
+    alias ls="exa"
+    alias ll="exa -l"
+    alias la="exa -a"
+    alias l="exa -la"
+fi

@@ -6,7 +6,7 @@ function mkcd() {
 
 function chpwd() {
     emulate -L zsh
-    ls -lh
+    ls -l
 }
 
 function movtomp4() {

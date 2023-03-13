@@ -17,12 +17,6 @@ source $ZSH/oh-my-zsh.sh
 # don't autocd
 unsetopt autocd
 
-# custom keybindings.
-bindkey '^F' autosuggest-accept
-bindkey ' ' magic-space
-bindkey 'ç' fzf-cd-widget
-VIM_MODE_VICMD_KEY='jj'
-
 # plugin manager
 export ZPLUG_HOME=$HOME/.zplug
 source $ZPLUG_HOME/init.zsh
@@ -46,6 +40,12 @@ zplug load
 
 # make command green and bold
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold
+
+# custom keybindings.
+bindkey '^F' autosuggest-accept
+bindkey ' ' magic-space
+bindkey '^J' fzf-cd-widget
+VIM_MODE_VICMD_KEY='jj'
 
 # other stuff
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
