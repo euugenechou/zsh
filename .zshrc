@@ -53,3 +53,10 @@ VIM_MODE_VICMD_KEY='jj'
 [ -f "$HOME/.nimble/env" ] && source "$HOME/.nimble/env"
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 [ -f "$HOME/.gcloud/env" ] && source "$HOME/.gcloud/env"
+
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+  export NIX_PATH="$HOME/.nix-defexpr"
+fi
+
+source /Users/eugene/.docker/init-zsh.sh || true # Added by Docker Desktop

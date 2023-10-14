@@ -40,3 +40,8 @@ if command -v exa > /dev/null; then
     alias la="exa -a"
     alias l="exa -la"
 fi
+
+# fun
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+
+alias youtube-mp3="youtube-dl -o '%(title)s.%(ext)s' -x --audio-format mp3"
