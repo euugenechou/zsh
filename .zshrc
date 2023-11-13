@@ -38,8 +38,9 @@ fi
 # load plugins
 zplug load
 
-# make command green and bold
+# highlighting
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#676e7b'
 
 # custom keybindings.
 bindkey '^F' autosuggest-accept
@@ -60,3 +61,17 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
 fi
 
 source /Users/eugene/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+# start typing + [Up-Arrow] - fuzzy find history forward
+if [[ "${terminfo[kcuu1]}" != "" ]]; then
+    autoload -U up-line-or-beginning-search
+    zle -N up-line-or-beginning-search
+    bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
+fi
+
+# start typing + [Down-Arrow] - fuzzy find history backward
+if [[ "${terminfo[kcud1]}" != "" ]]; then
+    autoload -U down-line-or-beginning-search
+    zle -N down-line-or-beginning-search
+    bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
+fi
