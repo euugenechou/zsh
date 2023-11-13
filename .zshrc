@@ -60,7 +60,9 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   export NIX_PATH="$HOME/.nix-defexpr"
 fi
 
-source /Users/eugene/.docker/init-zsh.sh || true # Added by Docker Desktop
+if [ -e "/Users/eugene/.docker/init-zsh.sh" ]; then
+    source '/Users/eugene/.docker/init-zsh.sh'
+fi
 
 # start typing + [Up-Arrow] - fuzzy find history forward
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
